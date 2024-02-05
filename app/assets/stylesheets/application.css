@@ -1,0 +1,91 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+div {
+    /*border: 1px solid black;*/
+}
+
+.sign_option {
+    float: right;
+}
+
+body {
+    background-color: #ebefed;
+}
+
+#banner {
+    width: 100%;
+}
+
+.home_link {
+    text-decoration: none;
+    font-size: 30px;
+    color: black;
+}
+
+.home_link:hover {
+    color: orange;
+}
+
+a:link {
+    color: black;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: aqua;
+}
+
+a:visited {
+    color: balck;
+}
+
+button {
+    background-color: #f3ba51;
+    border-width: 0.5px;
+    border-radius: 2px;
+    position: relative;
+    margin: 3px;
+    font-size: 15px;
+    color: rgb(255, 255, 255);
+
+}
+
+button:hover {
+    background-color: orange;
+}
+
+#bottomdiv {}
+
+#main {
+    float: left;
+    width: 70%;
+}
+
+#rightside {
+    float: left;
+    width: 30%;
+    height: 100%;
+    display: block;
+}
+
+/*
+#cart {
+    position: sticky;
+    top: 100px;
+    right: 200px;
+}*/

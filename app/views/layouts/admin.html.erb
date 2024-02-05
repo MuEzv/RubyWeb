@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Game Store</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+    <style>
+      #main{
+        width:100%;
+      }
+      </style>
+  </head>
+
+  <body class="<%= controller.controller_name %>">
+    <div id="banner" >
+      <%= link_to shopper_path, class:'home_link' do%>
+      <%= image_tag("logo.png", style:"width:50px;")%>
+      <%= @page_title || "Game Store" %>
+      <% end %>
+
+      
+      <% if session[:user_id]%>
+        <%= button_to 'Log out', logout_path, method: :get, class:'sign_option'%>
+      <%else%>
+        <%= button_to 'Admin Log In', login_path, method: :get, class:'sign_option'%>
+      <% end %>
+  
+    
+    </div>
+
+    <div id="bottomdiv">
+      <div id="main">
+        <%= yield %>
+      </div>
+      
+    </div>
+
+    
+<!--
+  <div style="position:static; bottom:0px;">image: Flaticon.com</div>
+-->
+  </body>
+</html>

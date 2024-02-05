@@ -1,0 +1,58 @@
+<%#
+    <style>
+    .pic {
+            width: 300px;
+            height: 95%;
+            border: 1px solid black;
+            padding: 2px;
+            float:left;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .prod{
+            width:100%;
+            display:block;
+            height: 150px;
+        }
+
+
+    </style>
+%>
+
+    <h1>Product Catelog</h1>
+
+    <%= form_tag(shopper_path, method: :get) do%>
+        <%= text_field_tag :search, params[:search], placeholder:"Search Products", style:"width:80%;height:20px;"%>
+        <%= submit_tag "Search", style:"font-size:15px;width:15%;"%>
+    <% end%>
+
+    <% @allproducts.each do |product|%>
+        <div id='prod' style="width:100%" class="<%= cycle('list_line_odd', 'list_line_even')%>">
+
+            <div class='pic'>
+                <%= image_tag(product.image) %>
+            </div>
+
+            <h3>
+               <%= link_to product.name, product %>
+            </h3>
+
+            <p>
+                <%= product.description %>
+            </p>
+
+            <p>
+                <strong>Price:</strong>
+                <%= number_to_currency(product.price) %>
+            </p>
+
+            <%= button_to 'Add to Cart', lineitems_path(product_id: product.id), class:'add_to_cart', remote: true %>
+
+        </div>
+
+    <% end%>
